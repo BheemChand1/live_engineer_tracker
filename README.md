@@ -5,170 +5,194 @@ A comprehensive Laravel-based admin panel for computer repair companies with rea
 ## 🚀 Features
 
 ### 📊 **Admin Dashboard**
-- Real-time engineer monitoring and statistics
-- Task management and assignment
-- Comprehensive reporting system
-- Live GPS tracking with interactive maps
-- Engineer performance analytics
+
+-   Real-time engineer monitoring and statistics
+-   Task management and assignment
+-   Comprehensive reporting system
+-   Live GPS tracking with interactive maps
+-   Engineer performance analytics
 
 ### 👨‍💼 **Engineer Management**
-- Complete engineer profiles with skills and contact info
-- Status tracking (active/inactive)
-- Work session logging
-- Location history tracking
-- Performance metrics
+
+-   Complete engineer profiles with skills and contact info
+-   Status tracking (active/inactive)
+-   Work session logging
+-   Location history tracking
+-   Performance metrics
 
 ### 📋 **Task Management**
-- Create, assign, and track repair tasks
-- Priority levels and due dates
-- Status updates (pending, in-progress, completed)
-- Task history and completion reports
-- Auto-assignment based on engineer availability
+
+-   Create, assign, and track repair tasks
+-   Priority levels and due dates
+-   Status updates (pending, in-progress, completed)
+-   Task history and completion reports
+-   Auto-assignment based on engineer availability
 
 ### 🗺️ **Live GPS Tracking**
-- Real-time engineer location monitoring
-- Interactive map with custom markers
-- Auto-refresh every 30 seconds
-- Engineer status indicators (online/offline)
-- Location history and route tracking
-- Mobile-responsive design
+
+-   Real-time engineer location monitoring
+-   Interactive map with custom markers
+-   Auto-refresh every 30 seconds
+-   Engineer status indicators (online/offline)
+-   Location history and route tracking
+-   Mobile-responsive design
 
 ### 📱 **Mobile Engineer Dashboard**
-- Dedicated mobile interface for field engineers
-- GPS location updates
-- Task management and status updates
-- Work session clock in/out
-- Real-time synchronization with admin panel
+
+-   Dedicated mobile interface for field engineers
+-   GPS location updates
+-   Task management and status updates
+-   Work session clock in/out
+-   Real-time synchronization with admin panel
 
 ### 📈 **Reports & Analytics**
-- Engineer attendance reports
-- Task completion statistics
-- Performance metrics
-- Location tracking reports
-- Exportable data formats
+
+-   Engineer attendance reports
+-   Task completion statistics
+-   Performance metrics
+-   Location tracking reports
+-   Exportable data formats
 
 ## 🛠️ Technology Stack
 
-- **Backend:** Laravel 11 (PHP 8.1+)
-- **Frontend:** Blade Templates + Bootstrap 5
-- **Database:** MySQL 8.0+
-- **Maps:** Leaflet.js with OpenStreetMap
-- **Authentication:** Laravel Breeze + Sanctum API
-- **Real-time:** Auto-refresh JavaScript + AJAX
+-   **Backend:** Laravel 11 (PHP 8.1+)
+-   **Frontend:** Blade Templates + Bootstrap 5
+-   **Database:** MySQL 8.0+
+-   **Maps:** Leaflet.js with OpenStreetMap
+-   **Authentication:** Laravel Breeze + Sanctum API
+-   **Real-time:** Auto-refresh JavaScript + AJAX
 
 ## 📋 Requirements
 
-- PHP 8.1 or higher
-- Composer
-- Node.js & NPM
-- MySQL 8.0+
-- Web server (Apache/Nginx)
+-   PHP 8.1 or higher
+-   Composer
+-   Node.js & NPM
+-   MySQL 8.0+
+-   Web server (Apache/Nginx)
 
 ## 🚀 Installation
 
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/BheemChand1/live_engineer_tracker.git
-   cd live_engineer_tracker
-   ```
+
+    ```bash
+    git clone https://github.com/BheemChand1/live_engineer_tracker.git
+    cd live_engineer_tracker
+    ```
 
 2. **Install PHP dependencies**
-   ```bash
-   composer install
-   ```
+
+    ```bash
+    composer install
+    ```
 
 3. **Install Node.js dependencies**
-   ```bash
-   npm install
-   ```
+
+    ```bash
+    npm install
+    ```
 
 4. **Environment setup**
-   ```bash
-   cp .env.example .env
-   php artisan key:generate
-   ```
+
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
 
 5. **Configure database**
-   ```env
-   DB_CONNECTION=mysql
-   DB_HOST=127.0.0.1
-   DB_PORT=3306
-   DB_DATABASE=computer_repair_admin
-   DB_USERNAME=your_username
-   DB_PASSWORD=your_password
-   ```
+
+    ```env
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=computer_repair_admin
+    DB_USERNAME=your_username
+    DB_PASSWORD=your_password
+    ```
 
 6. **Run migrations and seed data**
-   ```bash
-   php artisan migrate:fresh --seed
-   ```
+
+    ```bash
+    php artisan migrate:fresh --seed
+    ```
 
 7. **Build assets**
-   ```bash
-   npm run build
-   ```
+
+    ```bash
+    npm run build
+    ```
 
 8. **Start the application**
-   ```bash
-   php artisan serve
-   ```
+    ```bash
+    php artisan serve
+    ```
 
 ## 👤 Default Login Credentials
 
 ### Admin Account
-- **Email:** admin@computerrepair.com
-- **Password:** admin123
+
+-   **Email:** admin@computerrepair.com
+-   **Password:** admin123
 
 ### Engineer Accounts
-- **Email:** john.smith@computerrepair.com
-- **Password:** engineer123
+
+-   **Email:** john.smith@computerrepair.com
+-   **Password:** engineer123
 
 (More engineer accounts available - check `database/seeders/EngineerSeeder.php`)
 
 ## 🗺️ Live Tracking Features
 
 ### Real-Time Monitoring
-- **Auto-refresh:** Updates every 30 seconds
-- **Status Indicators:** Green (online), Gray (offline)
-- **Interactive Markers:** Click to view engineer details
-- **Map Controls:** Zoom, pan, and center on all engineers
+
+-   **Auto-refresh:** Updates every 30 seconds
+-   **Status Indicators:** Green (online), Gray (offline)
+-   **Interactive Markers:** Click to view engineer details
+-   **Map Controls:** Zoom, pan, and center on all engineers
 
 ### Engineer Status Cards
-- Work session information
-- Current task details
-- Location status and last update
-- Quick action buttons (call, locate, profile)
+
+-   Work session information
+-   Current task details
+-   Location status and last update
+-   Quick action buttons (call, locate, profile)
 
 ### API Endpoints
-- `GET /admin/api/engineers/locations` - Real-time location data
-- Auto-refresh functionality with error handling
-- Mobile-optimized responses
+
+-   `GET /admin/api/engineers/locations` - Real-time location data
+-   Auto-refresh functionality with error handling
+-   Mobile-optimized responses
 
 ## 📱 Mobile Integration
 
 ### Engineer Mobile Dashboard
-- GPS location tracking
-- Work session management
-- Task updates and status changes
-- Real-time sync with admin panel
+
+-   GPS location tracking
+-   Work session management
+-   Task updates and status changes
+-   Real-time sync with admin panel
 
 ### API Routes for Mobile
-- Location updates
-- Task management
-- Work session tracking
-- Authentication via Sanctum
+
+-   Location updates
+-   Task management
+-   Work session tracking
+-   Authentication via Sanctum
 
 ## 🔧 Configuration
 
 ### Map Settings
+
 Edit the default map center in `resources/views/admin/live-tracking.blade.php`:
+
 ```javascript
 const defaultLat = 40.7128; // Change to your city
-const defaultLng = -74.0060; // Change to your city
+const defaultLng = -74.006; // Change to your city
 ```
 
 ### Auto-refresh Interval
+
 Modify the refresh interval in the same file:
+
 ```javascript
 setInterval(() => {
     loadEngineerLocations();
@@ -199,15 +223,16 @@ setInterval(() => {
 
 ## 🔐 Security Features
 
-- Role-based authentication (admin/engineer)
-- CSRF protection
-- SQL injection prevention
-- XSS protection
-- Secure API endpoints with Sanctum
+-   Role-based authentication (admin/engineer)
+-   CSRF protection
+-   SQL injection prevention
+-   XSS protection
+-   Secure API endpoints with Sanctum
 
 ## 🎯 Usage
 
 ### Admin Workflow
+
 1. Login to admin panel
 2. Manage engineers and their profiles
 3. Create and assign tasks
@@ -215,6 +240,7 @@ setInterval(() => {
 5. Generate reports and analytics
 
 ### Engineer Workflow
+
 1. Login to mobile dashboard
 2. Clock in for work session
 3. Update GPS location
@@ -238,10 +264,10 @@ For support, email your-email@domain.com or create an issue in this repository.
 
 ## 🎉 Acknowledgments
 
-- Laravel Framework
-- Bootstrap for UI components
-- Leaflet.js for mapping functionality
-- OpenStreetMap for map tiles
+-   Laravel Framework
+-   Bootstrap for UI components
+-   Leaflet.js for mapping functionality
+-   OpenStreetMap for map tiles
 
 ---
 
@@ -251,13 +277,13 @@ For support, email your-email@domain.com or create an issue in this repository.
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   [Simple, fast routing engine](https://laravel.com/docs/routing).
+-   [Powerful dependency injection container](https://laravel.com/docs/container).
+-   Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+-   Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+-   Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+-   [Robust background job processing](https://laravel.com/docs/queues).
+-   [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
@@ -275,14 +301,14 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 
 ### Premium Partners
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+-   **[Vehikl](https://vehikl.com)**
+-   **[Tighten Co.](https://tighten.co)**
+-   **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+-   **[64 Robots](https://64robots.com)**
+-   **[Curotec](https://www.curotec.com/services/technologies/laravel)**
+-   **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+-   **[Redberry](https://redberry.international/laravel-development)**
+-   **[Active Logic](https://activelogic.com)**
 
 ## Contributing
 

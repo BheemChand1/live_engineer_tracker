@@ -7,6 +7,7 @@ use App\Models\Engineer;
 use App\Models\Task;
 use App\Models\EngineerLog;
 use App\Models\EngineerLocation;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,6 +24,7 @@ class EngineerController extends Controller
         ]);
 
         if (Auth::attempt($request->only('email', 'password'))) {
+            /** @var \App\Models\User $user */
             $user = Auth::user();
             
             if ($user->role !== 'engineer') {
@@ -40,6 +42,7 @@ class EngineerController extends Controller
                 'login_at' => now()
             ]);
 
+            // Create API token using Sanctum's HasApiTokens trait
             $token = $user->createToken('engineer-token')->plainTextToken;
 
             return response()->json([
