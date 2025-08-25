@@ -1,11 +1,251 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🔧 Live Engineer Tracker - Computer Repair Admin Panel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A comprehensive Laravel-based admin panel for computer repair companies with real-time GPS tracking, engineer management, and task assignment capabilities.
+
+## 🚀 Features
+
+### 📊 **Admin Dashboard**
+- Real-time engineer monitoring and statistics
+- Task management and assignment
+- Comprehensive reporting system
+- Live GPS tracking with interactive maps
+- Engineer performance analytics
+
+### 👨‍💼 **Engineer Management**
+- Complete engineer profiles with skills and contact info
+- Status tracking (active/inactive)
+- Work session logging
+- Location history tracking
+- Performance metrics
+
+### 📋 **Task Management**
+- Create, assign, and track repair tasks
+- Priority levels and due dates
+- Status updates (pending, in-progress, completed)
+- Task history and completion reports
+- Auto-assignment based on engineer availability
+
+### 🗺️ **Live GPS Tracking**
+- Real-time engineer location monitoring
+- Interactive map with custom markers
+- Auto-refresh every 30 seconds
+- Engineer status indicators (online/offline)
+- Location history and route tracking
+- Mobile-responsive design
+
+### 📱 **Mobile Engineer Dashboard**
+- Dedicated mobile interface for field engineers
+- GPS location updates
+- Task management and status updates
+- Work session clock in/out
+- Real-time synchronization with admin panel
+
+### 📈 **Reports & Analytics**
+- Engineer attendance reports
+- Task completion statistics
+- Performance metrics
+- Location tracking reports
+- Exportable data formats
+
+## 🛠️ Technology Stack
+
+- **Backend:** Laravel 11 (PHP 8.1+)
+- **Frontend:** Blade Templates + Bootstrap 5
+- **Database:** MySQL 8.0+
+- **Maps:** Leaflet.js with OpenStreetMap
+- **Authentication:** Laravel Breeze + Sanctum API
+- **Real-time:** Auto-refresh JavaScript + AJAX
+
+## 📋 Requirements
+
+- PHP 8.1 or higher
+- Composer
+- Node.js & NPM
+- MySQL 8.0+
+- Web server (Apache/Nginx)
+
+## 🚀 Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/BheemChand1/live_engineer_tracker.git
+   cd live_engineer_tracker
+   ```
+
+2. **Install PHP dependencies**
+   ```bash
+   composer install
+   ```
+
+3. **Install Node.js dependencies**
+   ```bash
+   npm install
+   ```
+
+4. **Environment setup**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+5. **Configure database**
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=computer_repair_admin
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password
+   ```
+
+6. **Run migrations and seed data**
+   ```bash
+   php artisan migrate:fresh --seed
+   ```
+
+7. **Build assets**
+   ```bash
+   npm run build
+   ```
+
+8. **Start the application**
+   ```bash
+   php artisan serve
+   ```
+
+## 👤 Default Login Credentials
+
+### Admin Account
+- **Email:** admin@computerrepair.com
+- **Password:** admin123
+
+### Engineer Accounts
+- **Email:** john.smith@computerrepair.com
+- **Password:** engineer123
+
+(More engineer accounts available - check `database/seeders/EngineerSeeder.php`)
+
+## 🗺️ Live Tracking Features
+
+### Real-Time Monitoring
+- **Auto-refresh:** Updates every 30 seconds
+- **Status Indicators:** Green (online), Gray (offline)
+- **Interactive Markers:** Click to view engineer details
+- **Map Controls:** Zoom, pan, and center on all engineers
+
+### Engineer Status Cards
+- Work session information
+- Current task details
+- Location status and last update
+- Quick action buttons (call, locate, profile)
+
+### API Endpoints
+- `GET /admin/api/engineers/locations` - Real-time location data
+- Auto-refresh functionality with error handling
+- Mobile-optimized responses
+
+## 📱 Mobile Integration
+
+### Engineer Mobile Dashboard
+- GPS location tracking
+- Work session management
+- Task updates and status changes
+- Real-time sync with admin panel
+
+### API Routes for Mobile
+- Location updates
+- Task management
+- Work session tracking
+- Authentication via Sanctum
+
+## 🔧 Configuration
+
+### Map Settings
+Edit the default map center in `resources/views/admin/live-tracking.blade.php`:
+```javascript
+const defaultLat = 40.7128; // Change to your city
+const defaultLng = -74.0060; // Change to your city
+```
+
+### Auto-refresh Interval
+Modify the refresh interval in the same file:
+```javascript
+setInterval(() => {
+    loadEngineerLocations();
+}, 30000); // 30 seconds (30000ms)
+```
+
+## 📂 Project Structure
+
+```
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── Admin/           # Admin panel controllers
+│   │   ├── Api/             # API controllers for mobile
+│   │   └── Engineer/        # Engineer dashboard controllers
+│   ├── Models/              # Eloquent models
+│   └── Http/Middleware/     # Custom middleware
+├── database/
+│   ├── migrations/          # Database schema
+│   └── seeders/            # Sample data
+├── resources/views/
+│   ├── admin/              # Admin panel views
+│   ├── engineer/           # Engineer dashboard views
+│   └── layouts/            # Layout templates
+└── routes/
+    ├── web.php             # Web routes
+    └── api.php             # API routes
+```
+
+## 🔐 Security Features
+
+- Role-based authentication (admin/engineer)
+- CSRF protection
+- SQL injection prevention
+- XSS protection
+- Secure API endpoints with Sanctum
+
+## 🎯 Usage
+
+### Admin Workflow
+1. Login to admin panel
+2. Manage engineers and their profiles
+3. Create and assign tasks
+4. Monitor live GPS tracking
+5. Generate reports and analytics
+
+### Engineer Workflow
+1. Login to mobile dashboard
+2. Clock in for work session
+3. Update GPS location
+4. Manage assigned tasks
+5. Update task status and completion
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📄 License
+
+This project is open-sourced software licensed under the [MIT license](LICENSE).
+
+## 🆘 Support
+
+For support, email your-email@domain.com or create an issue in this repository.
+
+## 🎉 Acknowledgments
+
+- Laravel Framework
+- Bootstrap for UI components
+- Leaflet.js for mapping functionality
+- OpenStreetMap for map tiles
+
+---
+
+**Built with ❤️ for efficient computer repair business management**
 
 ## About Laravel
 
