@@ -58,7 +58,8 @@ class EngineerController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:engineers,email',
             'phone' => 'required|string|max:20',
-            'skills' => 'required|string',
+            'skills' => 'required|array|min:1',
+            'skills.*' => 'string',
             'status' => 'required|in:active,inactive',
             'password' => 'required|string|min:8|confirmed',
         ]);
@@ -76,7 +77,7 @@ class EngineerController extends Controller
             'name' => $validated['name'],
             'email' => $validated['email'],
             'phone' => $validated['phone'],
-            'skills' => $validated['skills'],
+            'skills' => $validated['skills'], // Model cast will handle JSON conversion
             'status' => $validated['status'],
             'user_id' => $user->id,
         ]);
@@ -139,10 +140,12 @@ class EngineerController extends Controller
             'name' => 'required|string|max:255',
             'email' => ['required', 'email', Rule::unique('engineers')->ignore($engineer->id)],
             'phone' => 'required|string|max:20',
-            'skills' => 'required|string',
+            'skills' => 'required|array|min:1',
+            'skills.*' => 'string',
             'status' => 'required|in:active,inactive',
         ]);
 
+        // Convert skills array to proper format
         $engineer->update($validated);
 
         // Update associated user if exists

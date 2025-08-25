@@ -19,6 +19,7 @@ class Engineer extends Model
 
     protected $casts = [
         'status' => 'string',
+        'skills' => 'array',
     ];
 
     /**
